@@ -8,7 +8,4 @@ const db = await mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-const [rows] = await db.query("SELECT * FROM schools");
-console.log(rows)
-
 export default db;
