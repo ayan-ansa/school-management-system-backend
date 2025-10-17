@@ -23,7 +23,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-
 router.get("/", getSchools);
 
 router.post("/add", upload.single("image"), addSchools);
