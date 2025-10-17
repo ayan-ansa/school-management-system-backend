@@ -15,7 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/schoolImages", express.static("schoolImages"));
 
-// Routes
 app.use("/api/schools", schoolRoutes);
 
 app.listen(PORT, () => {
