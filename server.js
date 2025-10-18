@@ -6,11 +6,15 @@ import schoolRoutes from "./routes/schools.js";
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/schoolImages", express.static("schoolImages"));
-
 
 app.use("/api/schools", schoolRoutes);
 
@@ -20,7 +24,6 @@ app.use("/", (req, res) =>
     error: false,
   })
 );
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
